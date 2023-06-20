@@ -16,14 +16,49 @@ body {
     transform: translate(-50%, -50%);
     width: 30%;
 }
+.icon{
+    display:flex;
+    align-items: center;
+    transform: scale(1.2);
+}
+path{
+    stroke: #fff;
+    fill: #fff;
+    stroke-dasharray: 1800;
+    opacity: 10;
+    animation: animate 2s cubic-bezier(0,0.23, 1, .1);
+}
 
-@keyframes rotate {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    60% {
+        opacity: 10;
+        fill: none;
+        stroke-dasharray: 1800;
+    }
+    90% {
+        fill: rgba(255,255, 255, 0);
+    }
+    100%{
+        opacity: 10;
+        fill: rgba(255,255, 255, 0);
+        stroke-dasharray: 0;
+    }
 }
 
 .btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
 	color: #000000;
 	text-align: center;
 	text-decoration: none;
@@ -31,6 +66,8 @@ body {
     font-family: 'Nanum Gothic Coding', monospace;
     transition: all 0.3s ease-in-out;
     margin-top: 20px;
+    left: 70%;
+    padding: 10px;
     justify-content: center;
 }
 
@@ -55,13 +92,10 @@ body {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
   .wrapper {
-    width: 50%;
-    top: 20%;
-  }
-  
-  .btn {
-    font-size: 16px;
+    width: 100%;
+    top: 100%;
+    left: 75%;
   }
 }
